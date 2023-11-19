@@ -1,0 +1,64 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id String @id @default(uuid())
+}
+
+model Clothing {
+  id             String   @id @default(uuid())
+  title          String
+  clothingId     String   @unique
+  price          Decimal
+  isParcel       Boolean
+  numberOfParcel String?
+  parcelValue    Decimal?
+  colors         Color[]
+  images         Image[]
+
+  clothingSize ClothingSize[]
+}
+
+model Color {
+  id    String @id @default(cuid())
+  color String
+
+  clothing   Clothing? @relation(fields: [clothingId], references: [id])
+  clothingId String?
+}
+
+model Size {
+  id   String @id @default(cuid())
+  size String
+
+  clothingSize ClothingSize[]
+}
+
+// Tabela Pivô:
+model ClothingSize {
+  id         String @id @default(cuid())
+  clothingId String
+  sizeId     String
+
+  clothing Clothing @relation(fields: [clothingId], references: [id])
+  size     Size     @relation(fields: [sizeId], references: [id])
+
+  @@unique([clothingId, sizeId])
+}
+
+model Image {
+  id      String @id @default(cuid())
+  fileUrl String
+
+  clothing   Clothing? @relation(fields: [clothingId], references: [id])
+  clothingId String?
+}

@@ -1,0 +1,28 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Projeto Back-end da plataforma da Oxente",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts"
+  },
+  "keywords": [],
+  "author": "@maarcos4g",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.9.1",
+    "dotenv": "^16.3.1",
+    "prisma": "^5.6.0",
+    "tsx": "^4.1.3",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@fastify/cors": "^8.4.1",
+    "@fastify/multipart": "^8.0.0",
+    "@prisma/client": "^5.6.0",
+    "fastify": "^4.24.3",
+    "firebase-admin": "^11.11.0",
+    "short-unique-id": "^4.4.4",
+    "zod": "^3.22.4"
+  }
+}
