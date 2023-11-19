@@ -1,8 +1,8 @@
 import { firebaseAdmin } from "../config/firebase-admin"
 
-export function firebaseStorageService() {
+export async function firebaseStorageService() {
 
-  const { adminApp } = firebaseAdmin()
+  const { adminApp } = await firebaseAdmin()
 
   const bucket = adminApp.storage().bucket()
 

@@ -10,6 +10,7 @@
   "author": "@maarcos4g",
   "license": "MIT",
   "devDependencies": {
+    "@types/axios": "^0.14.0",
     "@types/node": "^20.9.1",
     "dotenv": "^16.3.1",
     "prisma": "^5.6.0",
@@ -20,6 +21,7 @@
     "@fastify/cors": "^8.4.1",
     "@fastify/multipart": "^8.0.0",
     "@prisma/client": "^5.6.0",
+    "axios": "^1.6.2",
     "fastify": "^4.24.3",
     "firebase-admin": "^11.11.0",
     "short-unique-id": "^4.4.4",

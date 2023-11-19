@@ -42,7 +42,7 @@ export async function uploadImagesRoute(app: FastifyInstance) {
 
     const clothingId = clothingIdField.value as string
 
-    const { bucket } = firebaseStorageService()
+    const { bucket } = await firebaseStorageService()
 
     const fileId = randomUUID();
     const extension = extname(upload.filename)
