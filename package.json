@@ -4,7 +4,8 @@
   "description": "Projeto Back-end da plataforma da Oxente",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch src/server.ts"
+    "dev": "tsx watch src/server.ts",
+    "vercel-build": "npx prisma migrate deploy && prisma generate && tsup src"
   },
   "keywords": [],
   "author": "@maarcos4g",
